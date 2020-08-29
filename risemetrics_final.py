@@ -59,7 +59,7 @@ def deletion(inp_img, cam_map, deletion_num):
 		#find the percentage prediction of the same class
 		percentage = torch.nn.functional.softmax(x, dim=1)[0] * 100 
 		pred_value= (percentage[index[0]].item())/100
-    #appending x_axis points
+                #appending x_axis points
 		x_points.append(pointer/(w*h)) 
 		#appending the predictions as y_axis points
 		y_points.append(pred_value)
@@ -111,7 +111,7 @@ def insertion(inp_img, cam_map, insertion_num):
 		#find the percentage prediction of the same class
 		percentage = torch.nn.functional.softmax(x, dim=1)[0] * 100 
 		pred_value= (percentage[index[0]].item())/100
-    #appending x_axis points
+                #appending x_axis points
 		x_points.append(pointer/(w*h)) 
 		#appending the predictions as y_axis points
 		y_points.append(pred_value)
@@ -182,7 +182,7 @@ def insertiongraph(inp_img, gcam, gcampp, smcampp, sccam, isscam1, isscam2,inser
   
   ################################## STORING THE CAM ARRAYS IN LIST DURING MODEL EVALUATION #######################################
   
-  df1 = df[110:120]
+df1 = df[110:120]
 #print(df1)
 #x5 = [['/gdrive/My Drive/ILSVRC2012_val_00000653.JPEG']]
 #for i in range(len(df1)):
@@ -278,7 +278,7 @@ for index, row in df1.iterrows():
   
   ################################### ALGORITHM EXECUTION CODE ###########################################
   
-  for i in range(0,len(input_list)):
+for i in range(0,len(input_list)):
   inp_img=input_list[i]
   #print(inp_img)
   #print(inp_img.shape)
@@ -292,6 +292,7 @@ for index, row in df1.iterrows():
 
   deletiongraph(inp_img, gcam, gcampp, smcampp, sccam, isscam1, isscam2,224)
   insertiongraph(inp_img, gcam, gcampp, smcampp, sccam, isscam1, isscam2,224)
+  
   
   ###################################### ALGORITHM EXECUTION CODE END ####################################################
   
